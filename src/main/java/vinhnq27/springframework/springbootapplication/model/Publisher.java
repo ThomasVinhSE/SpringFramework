@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-public class Pulisher {
+public class Publisher {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -17,10 +17,10 @@ public class Pulisher {
     @OneToMany
     @JoinColumn(name="publisher_id")
     private Set<Book> books = new HashSet<>();
-    public Pulisher() {
+    public Publisher() {
     }
 
-    public Pulisher(Long id, String name, String addressLine, String city, String state, String zip) {
+    public Publisher(Long id, String name, String addressLine, String city, String state, String zip) {
         this.id = id;
         this.name = name;
         this.addressLine = addressLine;
@@ -90,9 +90,9 @@ public class Pulisher {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Pulisher pulisher = (Pulisher) o;
+        Publisher publisher = (Publisher) o;
 
-        return id != null ? id.equals(pulisher.id) : pulisher.id == null;
+        return id != null ? id.equals(publisher.id) : publisher.id == null;
     }
 
     @Override
@@ -102,7 +102,7 @@ public class Pulisher {
 
     @Override
     public String toString() {
-        return "Pulisher{" +
+        return "Publisher{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", addressLine='" + addressLine + '\'' +

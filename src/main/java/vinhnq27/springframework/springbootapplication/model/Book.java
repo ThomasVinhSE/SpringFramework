@@ -13,7 +13,7 @@ public class Book {
     private String title;
     private String isbn;
     @ManyToOne
-    private Pulisher publisher;
+    private Publisher publisher;
     @ManyToMany
     @JoinTable(name = "author_book", joinColumns = @JoinColumn(name = "book_id"),
         inverseJoinColumns = @JoinColumn(name = "author_id"))
@@ -24,11 +24,11 @@ public class Book {
         this.isbn = isbn;
     }
 
-    public Pulisher getPublisher() {
+    public Publisher getPublisher() {
         return publisher;
     }
 
-    public void setPublisher(Pulisher publisher) {
+    public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
     }
 
@@ -88,7 +88,6 @@ public class Book {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", isbn='" + isbn + '\'' +
-                ", authors=" + authors +
                 '}';
     }
 }
