@@ -1,4 +1,4 @@
-package vinhnq27.springframework.springbootapplication.model;
+package vinhnq27.springframework.petclinic.model;
 
 public class Person {
     private String firstName;
