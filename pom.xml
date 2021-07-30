@@ -36,7 +36,7 @@
 		</plugins>
 	</build>
 	<scm>
-		<developerConnection>scm:git:git@github.com:ThomasVinhSE/SpringFramework.git</developerConnection>
+		<developerConnection>scm:git:https://github.com/ThomasVinhSE/SpringFramework.git</developerConnection>
   	  <tag>0.0.1</tag>
   </scm>
 </project>
