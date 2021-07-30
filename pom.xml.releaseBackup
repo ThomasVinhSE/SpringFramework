@@ -14,7 +14,7 @@
 	</parent>
 	<groupId>vinhnq27.springframework</groupId>
 	<artifactId>springbootapplication</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<name>app1</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -31,21 +31,11 @@
 				<artifactId>maven-release-plugin</artifactId>
 				<configuration>
 					<goal>install</goal>
-					<autoVersionSubmodules>true</autoVersionSubmodules>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	<scm>
 		<developerConnection>scm:git:https://github.com/ThomasVinhSE/SpringFramework.git</developerConnection>
-    <tag>HEAD</tag>
   </scm>
-	<distributionManagement>
-		<repository>
-			<uniqueVersion>false</uniqueVersion>
-			<id>clinic</id>
-			<url>https://github.com/ThomasVinhSE/SpringFramework.git</url>
-			<layout>default</layout>
-		</repository>
-	</distributionManagement>
 </project>
