@@ -2,10 +2,17 @@ package vinhnq27.springframework.petclinic.model;
 
 import java.time.LocalDate;
 
-public class Pet {
+public class Pet extends BaseEntity{
     private PetType petType;
     private Owner onwer;
     private LocalDate birthDate;
+
+    public Pet(Long id, PetType petType, Owner onwer, LocalDate birthDate) {
+        super(id);
+        this.petType = petType;
+        this.onwer = onwer;
+        this.birthDate = birthDate;
+    }
 
     public PetType getPetType() {
         return petType;

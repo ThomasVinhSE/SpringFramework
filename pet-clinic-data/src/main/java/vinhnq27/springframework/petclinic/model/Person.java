@@ -1,10 +1,11 @@
 package vinhnq27.springframework.petclinic.model;
 
-public class Person {
+public class Person extends BaseEntity{
     private String firstName;
     private String lastName;
 
-    public Person(String firstName, String lastName) {
+    public Person(Long id, String firstName, String lastName) {
+        super(id);
         this.firstName = firstName;
         this.lastName = lastName;
     }
