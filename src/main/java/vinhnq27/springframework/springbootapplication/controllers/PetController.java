@@ -1,7 +1,7 @@
 package vinhnq27.springframework.springbootapplication.controllers;
 
 import org.springframework.stereotype.Controller;
-import vinhnq27.springframework.springbootapplication.services.PetService;
+import com.springframework.pets.PetService;
 
 @Controller
 public class PetController {
