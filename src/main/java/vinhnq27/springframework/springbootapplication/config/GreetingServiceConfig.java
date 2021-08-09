@@ -3,7 +3,9 @@ package vinhnq27.springframework.springbootapplication.config;
 import com.springframework.pets.DogPetService;
 import com.springframework.pets.PetService;
 import com.springframework.pets.PetServiceFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
+import vinhnq27.springframework.springbootapplication.datasource.FakeDataSource;
 import vinhnq27.springframework.springbootapplication.repositories.EnglishGreetingRepository;
 import vinhnq27.springframework.springbootapplication.repositories.EnglishGreetingRepositoryImpl;
 import vinhnq27.springframework.springbootapplication.services.*;
@@ -11,7 +13,16 @@ import vinhnq27.springframework.springbootapplication.services.*;
 @ImportResource("classpath:config.xml")
 @Configuration
 public class GreetingServiceConfig {
-
+    @Bean
+    FakeDataSource fakeDataSource(@Value("${vinh.username}") String username,
+                                  @Value("${vinh.password}") String password,
+                                  @Value("${vinh.jdbcurl}") String jdbcUrl) {
+        FakeDataSource fakeDataSource = new FakeDataSource();
+        fakeDataSource.setUsername(username);
+        fakeDataSource.setPassword(password);
+        fakeDataSource.setJdbcurl(jdbcUrl);
+        return fakeDataSource;
+    }
     @Profile({"dog", "default"})
     @Bean
     PetService dogPetService(PetServiceFactory petServiceFactory) {

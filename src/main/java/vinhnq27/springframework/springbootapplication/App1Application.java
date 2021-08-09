@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import vinhnq27.springframework.springbootapplication.controllers.*;
+import vinhnq27.springframework.springbootapplication.datasource.FakeDataSource;
 import vinhnq27.springframework.springbootapplication.services.PrototypeBean;
 import vinhnq27.springframework.springbootapplication.services.SingletonBean;
 
@@ -46,7 +47,10 @@ public class App1Application {
 		System.out.println(prototypeBean.getMyScope());
 		PrototypeBean prototypeBean2 = ctx.getBean(PrototypeBean.class);
 		System.out.println(prototypeBean2.getMyScope());
-
+		FakeDataSource fakeDataSource = ctx.getBean(FakeDataSource.class);
+		System.out.println(fakeDataSource.getUsername());
+		System.out.println(fakeDataSource.getPassword());
+		System.out.println(fakeDataSource.getJdbcurl());
 	}
 
 }
