@@ -4,23 +4,23 @@ import com.springframework.pets.DogPetService;
 import com.springframework.pets.PetService;
 import com.springframework.pets.PetServiceFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.*;
 import vinhnq27.springframework.springbootapplication.datasource.FakeDataSource;
 import vinhnq27.springframework.springbootapplication.repositories.EnglishGreetingRepository;
 import vinhnq27.springframework.springbootapplication.repositories.EnglishGreetingRepositoryImpl;
 import vinhnq27.springframework.springbootapplication.services.*;
 
+@EnableConfigurationProperties(SfgConstructorConfiguration.class)
 @ImportResource("classpath:config.xml")
 @Configuration
 public class GreetingServiceConfig {
     @Bean
-    FakeDataSource fakeDataSource(@Value("${vinh.username}") String username,
-                                  @Value("${vinh.password}") String password,
-                                  @Value("${vinh.jdbcurl}") String jdbcUrl) {
+    FakeDataSource fakeDataSource(SfgConstructorConfiguration sfgConstructorConfiguration) {
         FakeDataSource fakeDataSource = new FakeDataSource();
-        fakeDataSource.setUsername(username);
-        fakeDataSource.setPassword(password);
-        fakeDataSource.setJdbcurl(jdbcUrl);
+        fakeDataSource.setUsername(sfgConstructorConfiguration.getUsername());
+        fakeDataSource.setPassword(sfgConstructorConfiguration.getPassword());
+        fakeDataSource.setJdbcurl(sfgConstructorConfiguration.getJdbcurl());
         return fakeDataSource;
     }
     @Profile({"dog", "default"})

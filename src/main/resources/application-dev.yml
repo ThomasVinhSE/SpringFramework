@@ -1,0 +1,4 @@
+vinh:
+  username: DevDBUser
+  password: DevPassword
+  jdbcurl: DevURL
