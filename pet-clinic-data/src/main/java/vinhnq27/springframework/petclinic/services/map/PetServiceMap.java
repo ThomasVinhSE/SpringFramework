@@ -1,12 +1,12 @@
 package vinhnq27.springframework.petclinic.services.map;
 
-import vinhnq27.springframework.petclinic.model.Owner;
+import org.springframework.stereotype.Service;
 import vinhnq27.springframework.petclinic.model.Pet;
 import vinhnq27.springframework.petclinic.services.CrudService;
 
 import java.util.Set;
-
-public class PetServiceMap extends AbstracMapService<Pet, Long> implements CrudService<Pet, Long> {
+@Service
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();

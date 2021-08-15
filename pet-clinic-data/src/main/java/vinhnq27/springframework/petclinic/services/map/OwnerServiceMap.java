@@ -2,13 +2,12 @@ package vinhnq27.springframework.petclinic.services.map;
 
 import org.springframework.stereotype.Service;
 import vinhnq27.springframework.petclinic.model.Owner;
-import vinhnq27.springframework.petclinic.services.CrudService;
 import vinhnq27.springframework.petclinic.services.OwnerService;
 
 import java.util.Set;
 
 @Service
-public class OwnerServiceMap extends AbstracMapService<Owner, Long> implements OwnerService {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
         return super.findAll();

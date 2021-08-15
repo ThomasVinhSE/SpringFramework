@@ -4,10 +4,10 @@ import vinhnq27.springframework.petclinic.model.BaseEntity;
 
 import java.util.*;
 
-public class AbstracMapService<T extends BaseEntity, ID extends Long> {
+public class AbstractMapService<T extends BaseEntity, ID extends Long> {
     protected Map<Long, T> map = new HashMap<>();
 
-    public AbstracMapService() {
+    public AbstractMapService() {
     }
 
     Set<T> findAll() {
