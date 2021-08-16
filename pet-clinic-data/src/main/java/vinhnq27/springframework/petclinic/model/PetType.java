@@ -3,6 +3,9 @@ package vinhnq27.springframework.petclinic.model;
 public class PetType extends BaseEntity{
     private String name;
 
+    public PetType() {
+    }
+
     public PetType(Long id, String name) {
         super(id);
         this.name = name;
