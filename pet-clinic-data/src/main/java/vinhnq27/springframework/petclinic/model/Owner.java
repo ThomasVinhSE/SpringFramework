@@ -1,6 +1,5 @@
 package vinhnq27.springframework.petclinic.model;
 
-import jdk.jfr.Name;
 
 import javax.persistence.*;
 import java.util.HashSet;

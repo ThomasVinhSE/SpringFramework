@@ -17,7 +17,7 @@ public class Pet extends BaseEntity{
 
     @ManyToOne
     @JoinColumn(name = "owner_id")
-    private Owner onwer;
+    private Owner owner;
 
     @Column(name = "birth_date")
     private LocalDate birthDate;
@@ -53,11 +53,11 @@ public class Pet extends BaseEntity{
     }
 
     public Owner getOnwer() {
-        return onwer;
+        return owner;
     }
 
     public void setOnwer(Owner onwer) {
-        this.onwer = onwer;
+        this.owner = onwer;
     }
 
     public LocalDate getBirthDate() {
