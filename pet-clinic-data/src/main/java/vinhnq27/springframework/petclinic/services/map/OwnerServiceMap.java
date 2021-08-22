@@ -1,5 +1,6 @@
 package vinhnq27.springframework.petclinic.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import vinhnq27.springframework.petclinic.model.Owner;
 import vinhnq27.springframework.petclinic.model.Pet;
@@ -10,6 +11,7 @@ import vinhnq27.springframework.petclinic.services.PetTypeService;
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     private final PetTypeService petTypeService;
     private final PetService petService;
