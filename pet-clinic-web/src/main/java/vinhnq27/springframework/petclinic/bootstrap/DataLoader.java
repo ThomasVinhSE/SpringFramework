@@ -60,9 +60,10 @@ public class DataLoader implements CommandLineRunner {
         owner1.setCity("Tp. HCM");
         owner1.setTelephone("123456789");
 
+
         Pet mikesPet = new Pet();
         mikesPet.setPetType(savedDogType);
-        mikesPet.setOnwer(owner1);
+        mikesPet.setOwner(owner1);
         mikesPet.setBirthDate(LocalDate.now());
         mikesPet.setName("Rosco");
 
@@ -78,7 +79,7 @@ public class DataLoader implements CommandLineRunner {
 
         Pet fimePet = new Pet();
         fimePet.setPetType(savedCatType);
-        fimePet.setOnwer(owner2);
+        fimePet.setOwner(owner2);
         fimePet.setBirthDate(LocalDate.now());
         fimePet.setName("Mango");
 
